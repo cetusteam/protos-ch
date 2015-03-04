@@ -1,4 +1,14 @@
-message ManyToManyInput {
+package ch.protos;
+
+message Nodes {
     repeated uint32 sources = 1 [packed=true];
     repeated uint32 targets = 2 [packed=true];
+}
+
+message Row {
+    repeated uint32 data = 1 [packed=true];
+}
+
+message Matrix {
+    repeated Row rows = 1;
 }
