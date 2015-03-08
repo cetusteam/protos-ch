@@ -1,8 +1,18 @@
 cmake_minimum_required(VERSION 3.1)
+
+# Just change this name. A static library will be generated
+project(protos-ch)
+
+# Generic simple stuff to compile all the protos of the folder using C++
 find_package(Protobuf REQUIRED)
 include_directories(${PROTOBUF_INCLUDE_DIRS})
 
+# find files
 file(GLOB PROTO_FILES "*.proto")
+
+# generate intermediate .pb.cc and .pb.h file
 PROTOBUF_GENERATE_CPP(PROTO_SRCS PROTO_HDRS ${PROTO_FILES})
-add_library(protos-ch STATIC ${PROTO_SRCS} ${PROTO_HDRS})
-target_link_libraries(protos-ch ${PROTOBUF_LIBRARIES})
+
+# complile the project
+add_library(${PROJECT_NAME} STATIC ${PROTO_SRCS} ${PROTO_HDRS})
+target_link_libraries(${PROJECT_NAME} ${PROTOBUF_LIBRARIES})
