@@ -10,5 +10,7 @@ message Row {
 }
 
 message Matrix {
-    repeated Row rows = 1;
+    // scale for elements in matrix.
+    optional uint32 scale = 1;
+    repeated Row rows = 2;
 }
