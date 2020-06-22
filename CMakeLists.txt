@@ -3,6 +3,8 @@ cmake_minimum_required(VERSION 3.1)
 # Just change this name. A static library will be generated
 project(protos-ch)
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+
 # Generic simple stuff to compile all the protos of the folder using C++
 find_package(Protobuf REQUIRED)
 include_directories(${PROTOBUF_INCLUDE_DIRS})
