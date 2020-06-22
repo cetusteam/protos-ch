@@ -1,1 +1,9 @@
 /build
+/CMakeFiles
+*.a
+Makefile
+*.pb.cc
+*.pb.h
+*.cbp
+cmake_install.cmake
+CMakeCache.txt
